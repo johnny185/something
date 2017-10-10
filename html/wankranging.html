@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="list"></ul>
+    
+</body>
+<script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.js"></script>
+<script>
+    var url = "http://www.easy-mock.com/mock/59cca02ea0ab222a113a36fc/mock/sites"
+    $.get(url,function(data){
+        console.log(data)
+        $(data.sites).each(function(index,ele){
+            var html = "";
+            html += `<li>${ele.name}</li>`
+            $("#list").append(html)
+        })
+    })
+</script>
+</html>
